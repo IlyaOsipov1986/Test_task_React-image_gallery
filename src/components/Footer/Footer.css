@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  height: 7vh;
+  margin: 0 auto;
+}
+
+.left {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 1;
+}
+
+.center {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+}
+
+.right {
+  flex-basis: 1;
+}
+
+.button {
+  background-color:transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button__selecte {
+  margin-right: 10px;
+}
+
+.selected {
+  background-color: #f50057;
+  color: white;
+  font-weight: 500;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 100%;
+  margin-right: 5px;
+  width: 28px;
+  height: 28px;
+  padding-top: 2px;
+}
