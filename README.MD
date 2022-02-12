@@ -1,2 +1,2 @@
 # Тестовое задание для компании Everypixel group
-Среда разработки WebStorm
+Среда разработки WebStorm, React, применил библиотеку Material UI для стилизации
