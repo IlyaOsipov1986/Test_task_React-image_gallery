@@ -1,2 +1,2 @@
 # Тестовое задание для компании Everypixel group
-Среда разоаботки WebStorm
+Среда разработки WebStorm
