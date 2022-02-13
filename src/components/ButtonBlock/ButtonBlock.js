@@ -19,8 +19,8 @@ const ButtonBlock = ({ images, deleteSelectedImages, selectAllImages }) => {
       </div>
       <div>
         <button className={'buttons__button-delete'}><DeleteIcon onClick={deleteSelectedImages} /></button>
-      </div>        
-      <div>Для отмены нажмите ESC</div>
+      </div>
+        <div>Для отмены нажмите ESC</div>
     </div>
   );        
   }

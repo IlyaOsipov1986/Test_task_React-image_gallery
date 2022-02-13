@@ -1,15 +1,14 @@
-import React,  { useState, useEffect  } from 'react';
+import React from 'react';
 import './App.css';
 import Data from './data.json';
 import ButtonBlock from '../ButtonBlock/ButtonBlock.js';
-import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '@material-ui/icons/Delete';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       images: Data.map(item => {
         return {
@@ -104,61 +103,53 @@ class App extends React.Component {
     const renderImages = currentImages.map((image, index) => {
 
   // Logic for adding an active class to make visible a checkbox icon
-      const { isSelected } = this.state.images;
       let classNames = 'checkbox';
-      let  visibility = 'visibility';
       if (image.isSelected === true) {
       classNames += ' active';
-      visibility += ' active';
+
     }
 
     return (
-      <div key={index} className="images">
-        <div className="icons">
+      <div key={index} className={'images'}>
+        <div className={'icons'}>
           <div className={classNames}>
-            <Checkbox 
-              checked={image.isSelected}
-              onChange={e => {
-              this.selectedImages(indexOfFirstImage + index);}
-              } 
-            />          
-          </div>
-          <div className="icons__left">
-            <div className="trash" title="Удалить"><DeleteIcon onClick={e => {this.deleteImage(indexOfFirstImage + index);}} /></div>
+            <input type={'checkbox'} className={'checkbox-select'} checked={image.isSelected}
+              onChange={() => {
+              this.selectedImages(indexOfFirstImage + index);}}
+            />
+        </div>
+          <div className={'icons__left'}>
+            <div className={'delete'}><DeleteIcon onClick={() => {this.deleteImage(indexOfFirstImage + index);}} /></div>
           </div>
         </div> 
         <div className={'visibility'}><VisibilityIcon fontSize="large" /></div>
         <img src={image.sample_url} alt='' className="image" />
-        <div className="title">
-          <div className="title__info">
-            <span className="text">{image.name}</span>
-          </div>
-        </div>
+            <span className={'text'}>{image.name}</span>
       </div>
       )});
 
-    // Logic for displaying page numbers
-    const pageNumbers = [];
-      for (let i = 1; i <= Math.ceil(images.length / imagesPerPage); i++)
+
+   const pageNumbers = [];
+       for (let i = 1; i <= Math.ceil(images.length / imagesPerPage); i++)
       pageNumbers.push(i)
 
-    const renderPageNumbers = pageNumbers.map(number => {
-      return (
-        <div
-          key={number}
+     const renderPageNumbers = pageNumbers.map(number => {
+       return (
+      <div
+         key={number}
           id={number}
           className={ number === this.state.currentPage ? 'pagination activepage': 'pagination'}
-          onClick={this.handleClick}>
-          {number}
-        </div>       
-      );
-    });
+         onClick={this.handleClick}>
+           {number}
+         </div>
+       );
+      });
 
     return (
       <div className="App">
-        <div className="header">{this.state.images.length} ИЗОБРАЖЕНИЙ</div>
-        <div className="wrapper">{renderImages}</div>
-        <div className="pages">{renderPageNumbers}</div>
+        <div className={'header'}>{this.state.images.length} ИЗОБРАЖЕНИЙ</div>
+        <div className={'wrapper'}>{renderImages}</div>
+        <div className={'pages'}>{renderPageNumbers}</div>
         <ButtonBlock images={images} selectAllImages={this.selectAllImages} deleteSelectedImages={this.deleteSelectedImages} />
       </div>
     );
