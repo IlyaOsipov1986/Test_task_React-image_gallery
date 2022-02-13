@@ -1,13 +1,9 @@
 import React,  { useState, useEffect  } from 'react';
 import './App.css';
 import Data from './data.json';
-import Footer from '../Footer/Footer.js';
-
+import ButtonBlock from '../ButtonBlock/ButtonBlock.js';
 import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '@material-ui/icons/Delete';
-import GetAppIcon from '@material-ui/icons/GetApp';
-import CreditCardIcon from '@material-ui/icons/CreditCard';
-import ShareIcon from '@material-ui/icons/Share';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 
 
@@ -68,10 +64,10 @@ class App extends React.Component {
 
     let images = this.state.images.slice();
     if(selectAllChecked){
-      for(var i = 0; i < this.state.images.length; i++)
+      for(let i = 0; i < this.state.images.length; i++)
         images[i].isSelected = true;
       } else {
-        for(var i = 0; i < this.state.images.length; i++)
+        for(let i = 0; i < this.state.images.length; i++)
         images[i].isSelected = false;
       }
 
@@ -128,20 +124,15 @@ class App extends React.Component {
             />          
           </div>
           <div className="icons__left">
-            <div className="share" title="Поделиться"><ShareIcon /></div>
             <div className="trash" title="Удалить"><DeleteIcon onClick={e => {this.deleteImage(indexOfFirstImage + index);}} /></div>
-            <div className="download" title="Скачать"><GetAppIcon /></div>
           </div>
         </div> 
-        <div className={visibility}><VisibilityIcon fontSize="large" /></div>         
-        <img src={image.sample_url} alt="Image" className="image" />
+        <div className={'visibility'}><VisibilityIcon fontSize="large" /></div>
+        <img src={image.sample_url} alt='' className="image" />
         <div className="title">
           <div className="title__info">
-            <span className="question-box">?</span>
-            <span className="triangle">&#9660;</span>
-            <span className="text">Выберите лицензию</span>
+            <span className="text">{image.name}</span>
           </div>
-          <div><CreditCardIcon className="creditcard"/></div>
         </div>
       </div>
       )});
@@ -168,7 +159,7 @@ class App extends React.Component {
         <div className="header">{this.state.images.length} ИЗОБРАЖЕНИЙ</div>
         <div className="wrapper">{renderImages}</div>
         <div className="pages">{renderPageNumbers}</div>
-        <Footer images={images} selectAllImages={this.selectAllImages} deleteSelectedImages={this.deleteSelectedImages} />
+        <ButtonBlock images={images} selectAllImages={this.selectAllImages} deleteSelectedImages={this.deleteSelectedImages} />
       </div>
     );
   }

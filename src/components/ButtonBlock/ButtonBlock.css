@@ -1,0 +1,46 @@
+.block__wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 350px;
+  align-items: center;
+  background: white;
+  height: 7vh;
+  padding: 30px 0 30px 0;
+  color: gray;
+}
+
+.wrapper__buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttons__button-select {
+  background-color:transparent;
+  color: gray;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.buttons__button-delete {
+  background-color:transparent;
+  color: gray;
+  border: none;
+  cursor: pointer;
+}
+
+.buttons__select-img {
+  background-color: green;
+  color: white;
+  font-weight: 500;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 100%;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 28px;
+  height: 28px;
+  padding-top: 2px;
+}

@@ -34,10 +34,10 @@
 .icons__left {
   display: flex;
   justify-content: space-around;
-  width: 150px;
+
 }
 
-.share, .trash, .download {
+.share, .trash {
   z-index: 1;
   cursor: pointer;
 }
@@ -48,11 +48,13 @@
   top: 35%;
   left: 50%;
   visibility: hidden;
+  color: gray;
 }
 
 .checkbox {
   z-index: 1;
-  border-radius: 50%;
+  border-radius: 100%;
+
 }
 
 .active {
@@ -84,17 +86,8 @@
   visibility: visible;
 }
 
-.images:hover .creditcard {
-  visibility: visible;
-}
-
 .images:hover .visibility {
   visibility: visible;
-}
-
-.creditcard {
-  visibility: hidden;
-  z-index: 1;
 }
 
 .title {
@@ -112,43 +105,30 @@
   width: 210px;
 }
 
-.question-box {
-  background-color: #696969;
-  color: white;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding-top: 3px;
-}
-
-.triangle {
-  font-size: 10px;
-  color: #696969;
-}
-
 .pagination {
   border-radius: 100%;
-  background-color: #f500577a;
+  background-color: #A9A9A9;
   color: white;
   padding: 2px 10px;
-  margin-bottom: 30px;
+
   cursor: pointer;
   }
 
   .pagination:hover {
-    background-color: #f50057;
+    background-color: #696969;
   }
 
 .activepage {
-  background-color: #f50057;
+  background-color: #696969;
 }
 
 .pages {
   display: flex;
   margin: 0 auto;
-  justify-content: space-around;
-  width: 100px;
+  justify-content: center;
+  gap: 20px;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 400;
+  background-color:  #F5F5F5;
 }
