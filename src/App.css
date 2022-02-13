@@ -1,0 +1,125 @@
+.App {
+  text-align: center;
+  background-color: #F5F5F5;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  padding-top: 30px;
+  width: 1150px;
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.icons {
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 270px;
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.share, .delete {
+  z-index: 1;
+  cursor: pointer;
+}
+
+.visibility {
+  position: absolute;
+  z-index: 0;
+  top: 35%;
+  left: 50%;
+  visibility: hidden;
+  color: gray;
+}
+
+.checkbox-select {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 3px solid white;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-select:checked {
+  background-color: green;
+
+}
+
+.active {
+  visibility: visible;
+}
+
+.images {
+  width: 350px;
+  height: 280px;
+  border:  1px solid #D3D3D3;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  margin-bottom: 40px;
+  position: relative;
+  transition: all 1s ease-out;
+}
+
+.image {
+  width: 350px;
+  height: 220px;
+  background-size: cover;
+}
+
+.images:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 5px 5px rgba(0,0,0,0.5);
+}
+
+.images:hover .icons {
+  visibility: visible;
+}
+
+.images:hover .visibility {
+  visibility: visible;
+}
+
+.pagination {
+  border-radius: 100%;
+  background-color: #A9A9A9;
+  color: white;
+  padding: 2px 10px;
+  cursor: pointer;
+  }
+
+  .pagination:hover {
+    background-color: #696969;
+  }
+
+.activepage {
+  background-color: #696969;
+}
+
+.pages {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 0 30px 0;
+  background-color:  #F5F5F5;
+}
